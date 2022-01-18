@@ -3,18 +3,15 @@ const app = Vue.createApp({
     data() {
         // We are returning an object inseide the function
         return{
+            showBooks: true,
             title: "Hero on the way",
             second: "number 2",
             age: 27,
         }
     },
     methods: {
-        changetitle() {
-    // The event below will output the updated title
-            this.title = 'The Five Love Languages'
-
-    // The below event is another way of out-putting using the arguement passed in the function.
-            // this.title = title
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
         }
     }
 })

@@ -13,13 +13,20 @@
     
     <!-- Mounting the Vue App- The Vue app only works within this div with an id of app -->
     <div id="app">
+    <div v-if="showBooks">
         <h2>{{ title }} - {{ second }} - {{age}}</h2>
-        
-        <button v-on:click="age++">Increase Age</button> -
-        <button v-on:click="age--">Decrease Age</button>
-        <div @click="changetitle('When Angels Ruled The Sky')">Click to change title</div>
     </div>
 
+    <!-- The button function below either shows or hides books outputs -->
+    <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+    &nbsp;
+    <!-- The below v-if statement will output the ShowBooks option on the button to display books, Or for short use (<span v-else>Show Books</span>) instead. -->
+        <span v-if="!showBooks">Show Books</span>
+    </button>
+    <br>
+    <div v-show="showBooks">Currently showing books</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
